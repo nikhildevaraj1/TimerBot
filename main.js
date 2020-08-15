@@ -51,6 +51,6 @@ client.once('ready', ()=> {
 })
 
 
-client.login('NzQzMTA2NjI3NTM1ODk2Njc4.XzP1-g.J4zgtyR8wUJylEqXfWOeN52oICo')
+client.login('')
 
 
