@@ -24,7 +24,7 @@ client.on('message', message =>{
                 { name: 'Next meeting:', value: '!nextmeeting'},
                 { name: 'Resources:', value: '!tutorresources'},
                 { name: 'FAQ (Please use this before you ask us a question):', value: '!faq'},
-                { name: 'Information if your studeent doesn\'t reply within 1 week:', value: '!studentnoreply'},
+                { name: 'Information if your student doesn\'t reply:', value: '!studentnoreply'},
             )
             .setTimestamp()
             .setFooter('Educationist Tutoring© ', 'https://i2.wp.com/educationisttutoring.org/wp-content/uploads/2020/07/White-educationist-logo-banner.png?strip=info&w=300&ssl=1');
@@ -67,7 +67,7 @@ client.on('message', message =>{
                 { name: 'I can\'t find a common timing with my student', value: 'The timings we give you in the confirmation email is just a small number of selections that the students gave us. This means we highly recommend that you guys email your student with your own timings if needed and see if they can adjust. '},
                 { name: 'What happens if I need to stop when school starts?', value: 'If you truly believe that you are unable to continue classes when school starts, plese email us. Something important to remember is that this commitment is extremeley minimal (30-60 minutes), so you should try the best to continue classes.'},
                 { name: 'Where is the resource folder?', value: 'The resource folder that you can use to teach will be in the confirmation email after you get a student.'},
-                { name: 'Should we assign our student homework?', value: 'This is entirely up to you. If you feel like your student is strugglinh'},
+                { name: 'Should we assign our student homework?', value: 'This is entirely up to you. If you feel like your student is struggling, you can give homework to make sure they understand the material.'},
 
 
             )
@@ -81,13 +81,10 @@ client.on('message', message =>{
             .setDescription('Here is information on our next meeting')
             .addFields(
                 { name: '\u200B', value: '\u200B' },
-                { name: 'Student No Response', value: 'If your student does not respond within 1 week, please email us with how long it has been since you have emailed your student, your student name, and student age. After this, we will give you guys more information of how to get back on our waiting list.'},
-                { name: 'Tutor Resources', value: 'Please use our **!resources** command to get more information about our tutor resources'},
-                { name: 'How to get content curated?', value: 'If you are a current tutor, you can DM/email one of the content curators that introduced themselves in the **#curator-introduction-and-information** channel. Before this we would always reccomend checking our drive and seeing if that topic is already made to minimize repeats. '},
-                { name: 'How can I upload content I made?', value: 'Please DM/email one of the owners that **you want to add content you have made, your name, email, and specific subject you want to upload it for.**'},
-                { name: 'How can I become a tutor', value: 'https://educationisttutoring.org/apply-to-be-a-tutor/'},
-                { name: 'Tiktok: Our viral video (135k+ views, 22k+ likes)', value: 'https://www.tiktok.com/@educationisttutoring/video/6853538595874032902?lang=en'},
-                { name: 'Extra Information', value: 'Another important thing to remember is that if have any suggestions or have ideas for our social media, please let Jysotna know (@j.a.05#7869). She is our social media director and will be able to talk to you guys about your ideas and future posts. '},
+                { name: 'When is our next meeting?', value: 'August 22, 6-7 PM CST'},
+                { name: 'Where will this meeting be taking place?', value: 'This meeting will be in the "Meetings" voice channel on Discord'},
+                { name: 'What will we be talking about in this meeting?', value: 'This meeting is to talk about the current state of Educationist and what our plans  are for the future. In addition, we  will get feedback from you guys and see where we can improve.'},
+                { name: 'Who can attend this meeting?', value: 'Both tutors **and** content curators can attend this meeting!'},
             )
             .setTimestamp()
             .setFooter('Educationist Tutoring© ', 'https://i2.wp.com/educationisttutoring.org/wp-content/uploads/2020/07/White-educationist-logo-banner.png?strip=info&w=300&ssl=1');
@@ -95,17 +92,13 @@ client.on('message', message =>{
     } else if(command === 'studentnoreply'){
         const studentnoreplyEmbed = new Discord.MessageEmbed()
             .setColor('#0099ff')
-            .setTitle('Next Meeting')
+            .setTitle('Some steps to get a new student')
             .setDescription('Here is information on our next meeting')
             .addFields(
                 { name: '\u200B', value: '\u200B' },
-                { name: 'How long until I can get matched with a new student?', value: 'If your student doesn\'t respond within 1 week that you email them , you can get a new student.'},
+                { name: 'How long until I can get matched with a new student?', value: 'If your student doesn\'t respond within 1 week from the time that you email them, you can get a new student.'},
                 { name: 'How can I get a new student?', value:'Please email us with the title, "Student No Reply" and email us your student\'s name, email, and age. After this, we will give you more information on how you can get on our waiting list again.'},
-                { name: 'How to get content curated?', value: 'If you are a current tutor, you can DM/email one of the content curators that introduced themselves in the **#curator-introduction-and-information** channel. Before this we would always reccomend checking our drive and seeing if that topic is already made to minimize repeats. '},
-                { name: 'How can I upload content I made?', value: 'Please DM/email one of the owners that **you want to add content you have made, your name, email, and specific subject you want to upload it for.**'},
-                { name: 'How can I become a tutor', value: 'https://educationisttutoring.org/apply-to-be-a-tutor/'},
-                { name: 'Tiktok: Our viral video (135k+ views, 22k+ likes)', value: 'https://www.tiktok.com/@educationisttutoring/video/6853538595874032902?lang=en'},
-                { name: 'Extra Information', value: 'Another important thing to remember is that if have any suggestions or have ideas for our social media, please let Jysotna know (@j.a.05#7869). She is our social media director and will be able to talk to you guys about your ideas and future posts. '},
+                { name: 'What if my student responds after the 1 week?', value: 'If your student replys to your email after 1 week, please let them know they have been released and you can point to our **system rules**: https://educationisttutoring.org/system-rules/'},
             )
             .setTimestamp()
             .setFooter('Educationist Tutoring© ', 'https://i2.wp.com/educationisttutoring.org/wp-content/uploads/2020/07/White-educationist-logo-banner.png?strip=info&w=300&ssl=1');
@@ -119,4 +112,4 @@ client.once('ready', ()=> {
 })
 
 
-client.login('NzQzMTA2NjI3NTM1ODk2Njc4.XzP1-g.8k3bUC5GLSFbaHodgShP4M5Hpjc')
+client.login('NzQzMTA2NjI3NTM1ODk2Njc4.XzP1-g.RCFlTbvHPZJJS3j57YGl9p8f5z8')
