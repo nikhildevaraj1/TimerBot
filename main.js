@@ -43,7 +43,9 @@ client.on('message', message =>{
 
     } else if(command === 'faq'){
         client.commands.get('faq').execute(message, args);
-    }
+    } else if(command === 'tutorresources'){
+        client.commands.get('tutorresources').execute(message, args);
+    } 
 })
 
 client.once('ready', ()=> {
@@ -51,6 +53,6 @@ client.once('ready', ()=> {
 })
 
 
-client.login('')
+client.login('NzQzMTA2NjI3NTM1ODk2Njc4.XzP1-g.HRECYZ__-RiyPnAoLu1fG1sftlA')
 
 

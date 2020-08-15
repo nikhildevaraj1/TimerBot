@@ -6,7 +6,7 @@ module.exports = {
     execute(message, args){
         const faqEmbed = new Discord.MessageEmbed()
             .setColor('#0099ff')
-            .setTitle('Common Content Curator Questions: ')
+            .setTitle('FAQ: ')
             .addFields(
                 { name: '\u200B', value: '\u200B' },
                 { name: 'Where is our FAQ?', value: 'https://educationisttutoring.org/faq-page/'},

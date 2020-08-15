@@ -18,6 +18,7 @@ module.exports = {
                 { name: 'FAQ (Please use this before you ask us a question):', value: '!faq'},
                 { name: 'Information if your student doesn\'t reply:', value: '!studentnoreply'},
                 { name: 'Content Curator Commands', value: '!contentquestions'},
+                { name: 'Information if your student doesn\'t reply', value: '!studentnoreply'},
             )
             .setTimestamp()
             .setFooter('Educationist Tutoring© ', 'https://i2.wp.com/educationisttutoring.org/wp-content/uploads/2020/07/White-educationist-logo-banner.png?strip=info&w=300&ssl=1');
