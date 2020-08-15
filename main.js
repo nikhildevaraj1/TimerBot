@@ -119,4 +119,4 @@ client.once('ready', ()=> {
 })
 
 
-client.login('')
+client.login('NzQzMTA2NjI3NTM1ODk2Njc4.XzP1-g.8k3bUC5GLSFbaHodgShP4M5Hpjc')
