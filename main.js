@@ -41,6 +41,8 @@ client.on('message', message =>{
     } else if(command === 'contentquestions'){
         client.commands.get('contentquestions').execute(message, args);
 
+    } else if(command === 'faq'){
+        client.commands.get('faq').execute(message, args);
     }
 })
 
@@ -49,6 +51,6 @@ client.once('ready', ()=> {
 })
 
 
-client.login('')
+client.login('NzQzMTA2NjI3NTM1ODk2Njc4.XzP1-g.J4zgtyR8wUJylEqXfWOeN52oICo')
 
 
