@@ -2,9 +2,10 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
-const prefix = '!';
+const prefix = '-';
 
 const fs = require('fs');
+const { timeLog } = require('console');
 
 client.commands = new Discord.Collection();
 
@@ -16,43 +17,107 @@ for(const file of commandFiles){
     client.commands.set(command.name, command)
 }
 
+secondcommands = {
+
+}
+
 client.on('message', message =>{
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).split(/ +/)
     const command = args.shift().toLowerCase();
 
+if (command === 'stimer') {
+	if (!args.length) {
+		return message.channel.send(`You didn't provide an attribute, ${message.author}!`);
+    }
+    
 
-    if(command === 'help'){
-        client.commands.get('help').execute(message, args);
+    mstimeframe = `${args}`;
+    stimeframe = mstimeframe * 1000;
+    stopcode = (Math.floor(Math.random() * 1000000))
+    message.channel.send(`Timer: ${args} seconds; Your code to stop this timer is ${stopcode}`);
+    secondcommands[parseInt(stopcode)] = parseInt(stopcode);
+    secondcommands[stopcode] = setTimeout(function(){
+        
+        message.channel.send(`The timer is over!, ${message.author}!`, {
+            tts: true
+            
+           })
+     }, stimeframe); //time in milliseconds  
+     
+}
 
-    } else if(command === 'socialmedia'){
-        client.commands.get('socialmedia').execute(message, args);
 
-    } else if(command === 'tutorquestions'){
-        client.commands.get('tutorquestions').execute(message, args);
-       
-    } else if(command === 'nextmeeting'){
-        client.commands.get('nextmeeting').execute(message, args);
+if(command === 'stimerstopcode') {
+    if (!args.length) {
+		return message.channel.send(`You didn't provide an attribute, ${message.author}!`);
+    }
+    message.channel.send(args);
+    stoppingcode = args
+    message.channel.send('The timer has been canceled')
+    clearTimeout(secondcommands[stoppingcode])
+}
 
-    } else if(command === 'studentnoreply'){
-        client.commands.get('studentnoreply').execute(message, args);
 
-    } else if(command === 'contentquestions'){
-        client.commands.get('contentquestions').execute(message, args);
 
-    } else if(command === 'faq'){
-        client.commands.get('faq').execute(message, args);
-    } else if(command === 'tutorresources'){
-        client.commands.get('tutorresources').execute(message, args);
-    } 
-})
+
+if (command === 'mtimer') {
+	if (!args.length) {
+		return message.channel.send(`You didn't provide a time, ${message.author}!`);
+    }
+
+    mstimeframe = `${args}`;
+    mtimeframe = mstimeframe * 60000
+    content = "minutes"
+    if(mstimeframe == 1){
+        content = "minute"
+    }
+    message.channel.send(`Timer: ${args} ${content}`);
+    
+    mtimertimeout = setTimeout(function(){ 
+        message.channel.send(`The timer is over!, ${message.author}!`, {
+            tts: true
+           })
+     }, mtimeframe); //time in milliseconds
+}
+if(command === 'mtimerstop') {
+    message.channel.send('The timer has been canceled')
+    clearTimeout(mtimertimeout)
+}
+
+if (command === 'htimer') {
+	if (!args.length) {
+		return message.channel.send(`You didn't provide a time, ${message.author}!`);
+    }
+
+    mstimeframe = `${args}`;
+    mtimeframe = mstimeframe * 3600000
+    content = "hours"
+    if(mstimeframe == 1){
+        content = "hour"
+    }
+    message.channel.send(`Timer: ${args} ${content}`);
+    
+    htimertimeout = setTimeout(function(){ 
+        message.channel.send(`The timer is over!, ${message.author}!`, {
+            tts: true
+           })
+     }, mtimeframe); //time in milliseconds
+}
+
+if(command === 'htimerstop') {
+    message.channel.send('The timer has been canceled')
+    clearTimeout(htimertimeout)
+}
+
+}) 
 
 client.once('ready', ()=> {
-    console.log('EducationistBot is online!')
+    console.log('TimerBot is online!')
 })
 
 
-client.login('NzQzMTA2NjI3NTM1ODk2Njc4.XzP1-g.HRECYZ__-RiyPnAoLu1fG1sftlA')
+client.login('NzQ2NTAxNTEzMDY4Njc1MjMz.X0BPtg.ReFUowTDSlcTyp7JswnId4sOuDs')
 
 
