@@ -118,6 +118,6 @@ client.once('ready', ()=> {
 })
 
 
-client.login('NzQ2NTAxNTEzMDY4Njc1MjMz.X0BPtg.ReFUowTDSlcTyp7JswnId4sOuDs')
+client.login('')
 
 
