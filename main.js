@@ -280,5 +280,10 @@ client.once('ready', ()=> {
 })
 
 
+<<<<<<< HEAD
 client.login('NzQ2NTAxNTEzMDY4Njc1MjMz.X0BPtg.GTPRP7B9XsnYEOHQgKVTEPTkALY')
+=======
+client.login('')
+
+>>>>>>> be021ccdbadb6485c1222a63e93e79885137241d
 
